@@ -1,0 +1,17 @@
+.CardBox {
+   padding: 25px;
+}
+.submitBtn {
+   position: relative;
+   padding: 25px;
+}
+.successMsg {
+   color: white;
+   position: absolute;
+   top: -8px;
+   left: 34.5%;
+   right: auto;
+}
+span.text-danger {
+   color: #fff250 !important;
+}

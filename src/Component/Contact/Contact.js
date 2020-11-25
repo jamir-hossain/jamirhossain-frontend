@@ -67,7 +67,7 @@ const Contact = () => {
                   </div>
                </form>
                <div className="text-center">
-                  <p className='text-white font-italic'>Sending to <span style={{color:'#fff454', cursor:'pointer'}}>jamirhossain@gmail.com</span></p>
+                  <p className='text-white font-italic'>Sending to <span style={{color:'#fff454', cursor:'pointer'}}>jomirhossain008@gmail.com</span></p>
                </div>
             </div>
             <div className='col-1 col-sm-1 col-md-3'></div>

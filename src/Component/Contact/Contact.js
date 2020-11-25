@@ -14,7 +14,7 @@ const Contact = () => {
    const { register, handleSubmit, watch, errors } = useForm();
    const onSubmit = (data, e) => {
       console.log(data)
-      fetch('http://localhost:3005/send-email', {
+      fetch('https://jamirhossain-backend.herokuapp.com/send-email', {
          method:'POST',
          headers:{
             'Content-Type':'application/json'

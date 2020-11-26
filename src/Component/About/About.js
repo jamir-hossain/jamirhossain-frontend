@@ -26,7 +26,7 @@ const About = () => {
                      <div className='d-flex'>
                         <Link className="text-decoration-none" to="/contact"><Button className="button mr-3" variant="contained" color="primary">CONTACT</Button></Link>
                         <Button className='button resume' variant="outlined" > <a className="ResumeBtnA" target="_blank"
-                        href="https://drive.google.com/file/d/1CgOo6mW5u-Q67Pwih1oR3nnwfkSKBpGq/view?usp=sharing">RESUME</a> </Button>
+                        href="https://drive.google.com/file/d/12_0MIux5aT_PB_reGNMg_Ze_VKzW2e9H/view">RESUME</a> </Button>
                      </div>
                   </div>
                   <div className="col-lg-2"></div>

@@ -6,7 +6,17 @@
    text-align: center;
    transition: all 0.3s;
 }
+.navLinkSm{
+   color: #fff454 !important;
+   text-align: center !important;
+   font-size: 14px;
+   transition: all 0.3s;
+}
 .navLink:hover{
+   color: white !important;
+   transform: scale(0.9);
+}
+.navLinkSm:hover{
    color: white !important;
    transform: scale(0.9);
 }
@@ -30,8 +40,8 @@
    color: white !important;
    border-color:#6073db !important;
 }
-.nav-link.active.navLink {
+.nav-link.active.navLink, .nav-link.active.navLinkSm {
    color: white !important;
-   text-align: center;
+   text-align: center !important;
    transform: scale(0.9);
 }

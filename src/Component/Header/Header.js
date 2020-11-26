@@ -31,7 +31,7 @@ const Header = () => {
               </li>
               <li className="nav-item px-3">
                 <a className="nav-link navLink btn-download" target="_blank"
-                href="https://drive.google.com/file/d/12_0MIux5aT_PB_reGNMg_Ze_VKzW2e9H/view"><FontAwesomeIcon icon={faFileAlt} /> <br/>RESUME</a>
+                href="https://drive.google.com/file/d/145S0N5wq9B858Gay3iFkR22Na_Ph4wc3/view?usp=sharing"><FontAwesomeIcon icon={faFileAlt} /> <br/>RESUME</a>
               </li>
             </ul>
           </div>

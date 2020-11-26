@@ -27,7 +27,7 @@ const SubHeader = () => {
                {/* <Link className="nav-link navLinkSm btn-download" to="/resume"><FontAwesomeIcon icon={faFileAlt} /> <br/>RESUME</Link> */}
 
                <a className="nav-link navLinkSm btn-download" target="_blank"
-               href="https://drive.google.com/file/d/1CgOo6mW5u-Q67Pwih1oR3nnwfkSKBpGq/view?usp=sharing"> <FontAwesomeIcon icon={faFileAlt} /> <br/>RESUME</a>
+               href="https://drive.google.com/file/d/145S0N5wq9B858Gay3iFkR22Na_Ph4wc3/view?usp=sharing"> <FontAwesomeIcon icon={faFileAlt} /> <br/>RESUME</a>
             </li>
          </ul>
       </nav>

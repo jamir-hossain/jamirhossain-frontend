@@ -1,15 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Profile from '../About/Profile';
 import SkillData from './SkillData';
+import skillsData from '../../File/skillsData';
 import './Skills.css'
 
 const Skills = () => {
-   let skills = [
-      {skillsName:'Programming Language', skills:['JavaScript', 'Python']},
-      {skillsName:'Web Frontend', skills:['HTML5', 'CSS3', 'SASS', 'Bootstrap', 'ReactJS', 'ReduxJS', 'MaterialUI']},
-      {skillsName:'Web Backend', skills:['NodeJS', 'ExpressJS', 'REST API', 'MongoDB']},
-      {skillsName:'Tools and Packages', skills:['Git', 'Create React App', 'EJS', 'NPM', 'VS Code',  'Chrome Dev  tool', 'Firebase', 'Netlify', 'Heroku']},
-   ]
+   const [skills, setSkills] = useState(skillsData)
+
    return (
       <div className='container my-5'>
          <div className='row'>

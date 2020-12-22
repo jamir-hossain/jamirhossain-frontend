@@ -1,22 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Works.css';
-import icon from '../../images/github-square-brands.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { IconButton } from '@material-ui/core';
-import { Facebook } from '@material-ui/icons';
 
 const SingleWork = (props) => {
    const work = props.data
 
    return (
-         <div className="card cardStyle singleCart" style={{backgroundColor: "rgb(23, 42, 69)"}}>
+         <div className="card cardStyle singleCart" style={{backgroundColor: "#0a192f"}}>
             <article>
                <img className='card-img-top' src={work.image} alt=""/>
                <div className="card-body">
-                  <h5 className="text-white Title"> {work.title} </h5>
-                  <p className="small text-white text-justify"> {work.description} </p>
+                  <h5 className="text-white projectTitle"> 
+                     {work.title} 
+                  </h5>
+                  <p className="small text-white text-justify"> 
+                     {work.description} 
+                  </p>
                   <div className='skills-items-container mx-0 px-0 py-0'>
                      {
                         work.tools.map(data => {
@@ -29,8 +30,23 @@ const SingleWork = (props) => {
                </div>
                <div className="card-footer">
                   <ul className="list-inline m-0 p-0">
-                     <li className="list-inline-item text-white mr-3 h5"><a className="UrlIcon" href={work.githubUrl} target="_blank"><FontAwesomeIcon icon={faGithub} /></a></li>
-                     <li className="list-inline-item h5"><a className="UrlIcon" href={work.siteUrl} target="_blank"><FontAwesomeIcon icon={faExternalLinkAlt} /></a></li>
+                     <li className="list-inline-item text-white mr-3 h5">
+                        <a 
+                           className="UrlIcon" 
+                           href={work.githubUrl} target="_blank"
+                        >
+                           <FontAwesomeIcon icon={faGithub}/>
+                        </a>
+                     </li>
+                     <li className="list-inline-item h5">
+                        <a 
+                           className="UrlIcon" 
+                           href={work.siteUrl} 
+                           target="_blank"
+                        >
+                           <FontAwesomeIcon icon={faExternalLinkAlt}/>
+                        </a>
+                     </li>
                   </ul>
                </div>
             </article>

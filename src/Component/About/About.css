@@ -19,16 +19,16 @@
    text-decoration: none;
    color: white;
 }
-.list{
+.skill{
    color: #fff250 !important;
-   list-style: none;
+   font-size: 18px;
 }
 .cardBg{
    background-color: #172a45;
 }
 .Icon{
    color: white !important;
-   font-size: 18px !important;
+   font-size: 22px !important;
    transition: all 0.3s !important;
 }
 .Icon:hover{

@@ -6,10 +6,10 @@
 }
 .skills-item-container {
    padding: 0.2em 1em;
-   border: 0.5px solid #333;
+   border: 0.5px solid #4b5769;
    border-radius: 5em;
-   margin: 0.1rem;
-   background: #0a192f;
+   margin: 0.2rem;
+   background: #4b5769;
    font-size: 1rem;
    color: #FFF;
 }

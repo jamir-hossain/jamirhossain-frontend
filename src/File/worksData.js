@@ -24,6 +24,14 @@ const worksData = [
 	  siteUrl:'https://employees-payment-information.netlify.app/'
   },
   {
+    title: "Add Contact List",
+    image: "https://res.cloudinary.com/dj7k9b8ps/image/upload/v1608554909/nffda0fllyhzs4jrtybc.png",
+    description:"This a pure vanilla JavaScript App, that I have created by OOP. Where people are able to add their contact number which is saved on their local Store. Even they can delete their saved contact.",
+    tools: ["HTML", "CSS", "Materialize CSS", "JavaScript", "OOP Concept"],
+    githubUrl:'https://github.com/Jamir45/add-contact-list-app-by-OOP-',
+	  siteUrl:'https://add-contact-list.netlify.app'
+  },
+  {
     title: "Hot Gadget",
     image: "https://res.cloudinary.com/dj7k9b8ps/image/upload/v1606132018/projectImage/o4cb6crezsisdzxgvwhw.png",
     description:"This is a simple and static one-page e-commerce website. It is an XD to HTML conversion. It's have designed by just HTML, CSS, and Bootstrap4.",

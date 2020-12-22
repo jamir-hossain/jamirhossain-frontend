@@ -3,12 +3,23 @@ import Profile from '../About/Profile';
 import SkillData from './SkillData';
 import skillsData from '../../File/skillsData';
 import './Skills.css'
+import Title from '../Title/Title';
 
 const Skills = () => {
    const [skills, setSkills] = useState(skillsData)
 
+   const firstWord = 'All of'
+   const secondWord = 'My Skills'
+   const buttonText = 'My Skills'
+
    return (
       <div className='container my-5'>
+         <Title 
+            firstWord={firstWord}
+            secondWord={secondWord}
+            buttonText={buttonText}
+         >
+         </Title>
          <div className='row'>
             <div className='col-md-5 py-5'>
                <Profile></Profile>

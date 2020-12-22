@@ -1,0 +1,16 @@
+.emptyDiv{
+   height: 50px;
+}
+.img-fluid {
+   max-width: 90%;
+   height: auto;
+   margin-top: 20px;
+}
+
+@media only screen and (min-width: 992px) {
+   .img-fluid {
+      max-width: 80%;
+      height: auto;
+      margin-top: 20px;
+   }
+}

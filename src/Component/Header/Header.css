@@ -1,16 +1,17 @@
 .navBar {
-   background-color: #27272e;
+   background-color: #0b1b33;
 }
 .navLink{
    color: #fff454 !important;
    text-align: center;
    transition: all 0.3s;
 }
-.navLinkSm{
+.navLinkSm {
    color: #fff454 !important;
    text-align: center !important;
    font-size: 14px;
    transition: all 0.3s;
+   padding: 7px 0px;
 }
 .navLink:hover{
    color: white !important;
@@ -26,13 +27,14 @@
 .subMenu {
    justify-content: space-around!important;
    padding: 0;
-   margin: 0;
+   margin: 3px 0px;
 }
 .btn-download {
    border: 1px solid;
-   padding: 0px 10px;
+   padding: 0px 5px;
    border-radius: 5px;
-   margin-top: 7px;
+   margin-top: 5px;
+   margin-left: -5px;
    transition: all 0.3s;
 }
 .btn-download:hover{

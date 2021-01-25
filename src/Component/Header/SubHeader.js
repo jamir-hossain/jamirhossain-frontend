@@ -51,7 +51,7 @@ const SubHeader = () => {
                <a 
                   className="nav-link navLinkSm btn-download" 
                   target="_blank"
-                  href="https://drive.google.com/file/d/145S0N5wq9B858Gay3iFkR22Na_Ph4wc3/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1J_qrr3vS7EhVnEJ-RxnGs92ON26aIgUa/view?usp=sharing"
                >
                   <FontAwesomeIcon icon={faFileAlt}/><br/>RESUME
                </a>

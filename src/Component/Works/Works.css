@@ -55,3 +55,14 @@
    font-size: 35px !important;
 }
 
+.readMore{
+   color: #fff454;
+   text-decoration: underline #fff454;
+   cursor: pointer;
+}
+.readMore:hover{
+   color: #fff454;
+   text-decoration: underline #fff454;
+   cursor: pointer;
+}
+

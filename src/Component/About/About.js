@@ -11,11 +11,11 @@ const About = () => {
    return (
       <div className="container">
          <Particles
-                style={{ position: 'absolute', top: 0, left: 0 }}
+                style={{ position: 'absolute', top: 70, left: 0, height:'auto'}}
                 params={{
                     "particles": {
                         "number": {
-                            "value": 50
+                            "value": 60
                         },
                         "size": {
                             "value": 5
@@ -79,7 +79,7 @@ const About = () => {
                            <a 
                               className="ResumeBtnA" 
                               target="_blank"
-                              href="https://drive.google.com/file/d/145S0N5wq9B858Gay3iFkR22Na_Ph4wc3/view?usp=sharing"
+                              href="https://drive.google.com/file/d/1J_qrr3vS7EhVnEJ-RxnGs92ON26aIgUa/view?usp=sharing"
                            >RESUME
                            </a>
                         </Button>

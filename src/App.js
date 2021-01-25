@@ -14,6 +14,7 @@ import Skills from "./Component/Skills/Skills";
 import Contact from "./Component/Contact/Contact";
 import Works from "./Component/Works/Works";
 import Achievement from "./Component/Achievement/Achievement";
+import WorksDetails from "./Component/WorksDetails/WorksDetails";
 
 
 function App() {
@@ -43,6 +44,9 @@ function App() {
           </Route>
           <Route path='/works'>
             <Works scrollFunc={scrollFunc} ref={scrollToResultDiv}></Works>
+          </Route>
+          <Route path='/project/:id'>
+            <WorksDetails></WorksDetails>
           </Route>
           <Route path='/achievement'>
             <Achievement></Achievement>

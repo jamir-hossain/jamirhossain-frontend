@@ -3,6 +3,7 @@ import './Works.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { Link } from 'react-router-dom';
 
 const SingleWork = (props) => {
    const work = props.data
@@ -16,7 +17,15 @@ const SingleWork = (props) => {
                      {work.title} 
                   </h5>
                   <p className="small text-white text-justify"> 
-                     {work.description} 
+                     {
+                        work.description.length > 180 
+                           ? 
+                        <>
+                           {work.description.slice(0, 185)+'.....'}<Link className='readMore' to={`/project/${work.id}`}>Read More</Link>
+                        </>
+                           :
+                         work.description
+                     } 
                   </p>
                   <div className='skills-items-container mx-0 px-0 py-0'>
                      {

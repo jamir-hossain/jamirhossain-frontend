@@ -1,7 +1,7 @@
 import React from 'react';
 import myPhoto from '../../images/2910 -12234 Copy.jpg'
 import { IconButton } from '@material-ui/core';
-import { Facebook, GitHub, Twitter } from '@material-ui/icons';
+import { Facebook, GitHub, LinkedIn, Twitter } from '@material-ui/icons';
 import Typed from 'react-typed';
 
 const Profile = () => {
@@ -40,8 +40,11 @@ const Profile = () => {
                >
                   <GitHub className="Icon"></GitHub>
                </IconButton>
-               <IconButton>
-                  <Twitter className="Icon"></Twitter>
+               <IconButton 
+                  href="https://www.linkedin.com/in/jamir-hossain-40a234206/" 
+                  target="_blank"
+               >
+                  <LinkedIn className="Icon"></LinkedIn>
                </IconButton>
             </div>
          </div>

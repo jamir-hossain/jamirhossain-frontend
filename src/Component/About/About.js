@@ -45,9 +45,7 @@ const About = () => {
                         Jamir <span>Hossain</span>
                      </h2>
                      <p className="text-justify text-white pb-5 pt-3">
-                        I am a web developer and programmer. I love JavaScript programming language. For this reason, I work with different frameworks of JavaScript. For the web frontend
-                        I like most to use React JS And I can apply React JS efficiently on the web frontend. I am also able to use UI frameworks with react.
-                        At the same time, I can work with Node JS at the backend of the web.
+                     A Self-motivated, Tech enthusiast and Creative MERN stack web developer with a deep interest in JavaScript. To gain confidence and excellence using my potential in the field of “Web Development”, and express my innovative creative skills for self and company growth.
                      </p>
                      <div className='d-flex'>
                         <Link 
@@ -79,7 +77,7 @@ const About = () => {
                            <a 
                               className="ResumeBtnA" 
                               target="_blank"
-                              href="https://drive.google.com/file/d/1J_qrr3vS7EhVnEJ-RxnGs92ON26aIgUa/view?usp=sharing"
+                              href="https://drive.google.com/file/d/18ohIK_PyUWRHIZp0LvR9SzK4HcdQoS0l/view?usp=sharing"
                            >RESUME
                            </a>
                         </Button>

@@ -22,7 +22,7 @@ const Profile = () => {
                </h3>
                <p className="skill">
                   <Typed
-                     strings={['MERN Stack Developer', 'Web Developer', 'Programmer']}
+                     strings={['Programmer', 'Front-end Developer', 'MERN Stack Developer']}
                      typeSpeed={40}
                      backSpeed={40}
                      loop

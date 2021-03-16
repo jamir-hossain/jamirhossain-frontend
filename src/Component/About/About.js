@@ -45,7 +45,7 @@ const About = () => {
                         Jamir <span>Hossain</span>
                      </h2>
                      <p className="text-justify text-white pb-5 pt-3">
-                     A Self-motivated, Tech enthusiast and Creative MERN stack web developer with a deep interest in JavaScript. To gain confidence and excellence using my potential in the field of “Web Development”, and express my innovative creative skills for self and company growth.
+                     A Self-motivated, Tech enthusiast, and Creative Front-end & MERN stack web developer with a deep interest in JavaScript. I have involved with programming since 2019 to gain confidence and excellence using my potential in the field of “Web Development”, and express my innovative creative skills for self and company growth.
                      </p>
                      <div className='d-flex'>
                         <Link 
@@ -77,7 +77,7 @@ const About = () => {
                            <a 
                               className="ResumeBtnA" 
                               target="_blank"
-                              href="https://drive.google.com/file/d/18ohIK_PyUWRHIZp0LvR9SzK4HcdQoS0l/view?usp=sharing"
+                              href="https://drive.google.com/file/d/1mSNTyZS6htoFifHphlTfdhlPKnrgX_0e/view?usp=sharing"
                            >RESUME
                            </a>
                         </Button>

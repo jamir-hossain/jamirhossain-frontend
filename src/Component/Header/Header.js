@@ -62,7 +62,7 @@ const Header = () => {
                 <a 
                   className="nav-link navLink btn-download" 
                   target="_blank"
-                  href="https://drive.google.com/file/d/1mSNTyZS6htoFifHphlTfdhlPKnrgX_0e/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1v33zsCnl42UpSNi4lTHylPMfoPBot1Eu/view?usp=sharing"
                 >
                   <FontAwesomeIcon icon={faFileAlt} /> <br/>RESUME
                 </a>

@@ -77,7 +77,7 @@ const About = () => {
                            <a 
                               className="ResumeBtnA" 
                               target="_blank"
-                              href="https://drive.google.com/file/d/1mSNTyZS6htoFifHphlTfdhlPKnrgX_0e/view?usp=sharing"
+                              href="https://drive.google.com/file/d/1v33zsCnl42UpSNi4lTHylPMfoPBot1Eu/view?usp=sharing"
                            >RESUME
                            </a>
                         </Button>

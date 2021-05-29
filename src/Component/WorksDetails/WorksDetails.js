@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import './WorksDetails.css'
 
 const WorksDetails = () => {
    const param = useParams()
@@ -39,6 +40,20 @@ const WorksDetails = () => {
                   <p className="text-white text-justify"> 
                      {project && project.description}
                   </p>
+                  <div className='text-white py-3'>
+                     {
+                        project && project.features.length !== 0 && <h5 className='features'>Web App Features</h5>
+                     }
+                     <ul className='text-white'>
+                        { 
+                           project && project.features.length !== 0 && project.features.map(data => {
+                              return <div>
+                                 <li> {data} </li>
+                              </div>
+                           })
+                        }
+                     </ul>
+                  </div>
                   <div className='skills-items-container mx-0 px-0 py-0'>
                      {
                         project && project.tools.map(data => {

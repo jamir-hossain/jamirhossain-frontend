@@ -1,0 +1,8 @@
+.features:after {
+   content: "";
+   width: 50%;
+   height: 2px;
+   display: block;
+   margin-top: 7px;
+   background-color: #fff454;
+}

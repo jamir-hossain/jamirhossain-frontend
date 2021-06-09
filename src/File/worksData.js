@@ -2,7 +2,7 @@ const worksData = [
   {
     id: 1,
     title: "My Blog (Multi Author)",
-    image: "https://res.cloudinary.com/dj7k9b8ps/image/upload/v1622273370/projectImage/e1tinbqvtgqhdx4sx2lr.png",
+    image: "https://res.cloudinary.com/dj7k9b8ps/image/upload/v1623130196/projectImage/nv7m6t3kggrepn5cqo1j.png",
     description:"This is a MERN Multi-Author Bloggin web app. Where users are able to register for creating any kind of article. But any user can read any kind of article. Register users can set and edit their profile, they can create, edit and delete their artilces. Register users also able to follow and unfollow other registered users and they can like, dislike and comment on other registered user's articles. It has a dashboard for maintaining and monitoring logged-in user activities.",
     features: ["Multi-author blogging website.", "User Read and create an article.","User can filter and Search any articles.", "Any user can see popular authors and popular articles.", "User has to register for create an Author profile.", "Before Complete registration, the user email will be verify.", "The author can set and edit her profile.", "An author can bookmark of other authors’ articles.", "Author can create, edit and delete her created article.", "A registered user can like, dislike and comment on any article.", "Registered users can follow and unfollow other registered users.", "It has a dashboard for maintenance and monitoring author activities." ],
     tools: ["SASS", "Bootstrap4", "Material UI", "ReactJS", "NodeJS", "ExpressJS", "MongoDB", "Mongoose.js", "Custom Authentication"],
@@ -11,10 +11,10 @@ const worksData = [
   },
   {
     id: 2,
-    title: "Doctor's Portal",
-    image: "https://res.cloudinary.com/dj7k9b8ps/image/upload/v1606132023/projectImage/thd5twb8gxtnyzztqdbf.png",
+    title: "Doctor's Garden",
+    image: "https://res.cloudinary.com/dj7k9b8ps/image/upload/v1623229718/projectImage/ldqlliklfyzdmbkuzgl5.png",
     description:"A Single-page MERN Stack hospital web-app. It has two dashboards. One is for the patient, where people can get an appointment and after the appointed patient can see their prescription where the doctor will give the list of medicines. Another dashboard is for doctors, where doctors can see the list of all the appointed patients. Here the doctors will give the necessary medicine to the patient and if the doctor wants, then he can cancel the patient's appointment.",
-    features: ["Online Appointment booking.", "Review Patients Appointments.","Appointed Patients Database.", "Prescribe Medicine for Each Patient Online.", "Separate Doctor Dashboard.", "Separate Patient Dashboard." ],
+    features: ["Separate Patient registration.", "Separate doctor registration.", "Online Appointment booking.", "Review Patients Appointments.","Appointed Patients Database.", "Separate Doctor Dashboard.", "Separate Patient Dashboard.", "Doctor Can approve or reject the patient.", "Doctor can provide prescription for each patient online." ],
     tools: ["Bootstrap4", "Material UI", "ReactJS", "NodeJS", "ExpressJS", "MongoDB"],
     githubUrl:'https://github.com/Jamir45/Doctor-Portal-Frontend',
 	  siteUrl:'https://doctorportal.netlify.app/'

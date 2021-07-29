@@ -29,7 +29,7 @@ const Profile = () => {
                   />
                </p>
                <IconButton 
-                  href="https://web.facebook.com/jomir.hossain.146"
+                  href="https://web.facebook.com/jamirhossain203/"
                   target="_blank"
                >
                   <Facebook className="Icon"></Facebook>
@@ -41,7 +41,7 @@ const Profile = () => {
                   <GitHub className="Icon"></GitHub>
                </IconButton>
                <IconButton 
-                  href="https://www.linkedin.com/in/jamir-hossain-40a234206/" 
+                  href="https://www.linkedin.com/in/jamir-hossain/" 
                   target="_blank"
                >
                   <LinkedIn className="Icon"></LinkedIn>

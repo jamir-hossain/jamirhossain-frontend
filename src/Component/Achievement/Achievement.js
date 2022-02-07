@@ -1,32 +1,42 @@
-import React from 'react';
-import certificate from '../../images/jamir hossain certificate.png'
-import './Achievement.css'
-import Title from '../Title/Title';
+import React from "react";
+import CustomImage from "../CustomImage";
+import { Container, Grid } from "@mui/material";
+import Breadcrumb from "../Breadcrumb/Breadcrumb";
 
 const Achievement = () => {
-   const achievement = ['https://res.cloudinary.com/dj7k9b8ps/image/upload/v1611573982/projectImage/achivement/hv2qxkwxivmyaomnetjj.png', 'https://res.cloudinary.com/dj7k9b8ps/image/upload/v1611573955/projectImage/achivement/ul5cvq7m9mxrbcvkkwia.png']
+  const achievement = [
+    "/assets/jamir hossain certificate.png",
+    "/assets/spondon-cerficate.png",
+  ];
 
-   const firstWord = 'My '
-   const secondWord = 'Achievement'
-   const buttonText = 'Certificate'
+  const firstWord = "My ";
+  const secondWord = "Achievement";
+  const buttonText = "Certificate";
 
-   return (
-      <div className="container">
-         <Title 
-            firstWord={firstWord}
-            secondWord={secondWord}
-            buttonText={buttonText}
-         ></Title>
-         <div className="row my-5">
-            <div className="text-center mb-5">
-               {
-                  achievement.map(img => <img className="img-fluid" src={img} alt=""/>)
-               }
-            </div>
-            <div className="d-sm-block d-md-none emptyDiv"></div>
-         </div>
-      </div>
-   );
+  return (
+    <>
+      <Container>
+        <Breadcrumb
+          firstWord={firstWord}
+          secondWord={secondWord}
+          buttonText={buttonText}
+        />
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={2}></Grid>
+          <Grid item xs={12} md={8}>
+            {achievement.map((img) => (
+              <CustomImage
+                src={img}
+                alt=""
+                sx={{ my: "12px", width: "100%", borderRadius: "8px" }}
+              />
+            ))}
+          </Grid>
+          <Grid item xs={12} md={2}></Grid>
+        </Grid>
+      </Container>
+    </>
+  );
 };
 
 export default Achievement;

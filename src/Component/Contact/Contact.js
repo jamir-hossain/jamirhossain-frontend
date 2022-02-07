@@ -1,121 +1,185 @@
-import { Button, Icon } from '@material-ui/core';
-import { Send } from '@material-ui/icons';
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import './Contact.css'
-import Title from '../Title/Title';
+import CustomBox from "../CustomBox";
+import CustomCard from "../CustomCard";
+import React, { useState } from "react";
+import SendIcon from "../icons/SendIcon";
+import { useForm } from "react-hook-form";
+import { styled, useTheme } from "@mui/system";
+import { H3, Paragraph, Span } from "../Typography";
+import { Button, Container, Grid } from "@mui/material";
+import Breadcrumb from "../Breadcrumb/Breadcrumb";
+
+const InputFieldBox = styled("div")(({ theme }) => ({
+  marginBottom: "16px",
+  "& input": { marginBottom: "6px" },
+  "& span": { color: theme.palette.warning.main },
+}));
+
+const inputStyle = {
+  width: "100%",
+  fontSize: "1rem",
+  fontWeight: 400,
+  border: "none",
+  lineHeight: 1.5,
+  color: "#495057",
+  backgroundColor: "#fff",
+  borderRadius: "0.25rem",
+  padding: "0.375rem 0.75rem",
+  transition: "border-color .15s ease-in-out,box-shadow .15s ease-in-out",
+};
+
+const StyledInput = styled("input")(({ theme }) => ({
+  ...inputStyle,
+  height: "calc(1.5em + 0.75rem + 2px)",
+  "&:focus": {
+    outline: "none",
+    boxShadow: theme.shadows[1],
+  },
+}));
+
+const StyledTextArea = styled("textarea")(({ theme }) => ({
+  ...inputStyle,
+  "&:focus": {
+    outline: "none",
+    boxShadow: theme.shadows[1],
+  },
+}));
+
+const ButtonBox = styled("div")(({ theme }) => ({
+  padding: "24px",
+  position: "relative",
+  textAlign: "center",
+}));
+
+const Error = styled("p")(({ theme }) => ({
+  color: "white",
+  position: "absolute",
+  top: "-8px",
+  left: "0",
+  right: "0",
+  margin: "auto",
+}));
 
 const Contact = () => {
-   const [result, setResult] = useState()
-   const [isSuccess, setIsSuccess] = useState(false)
-   if (isSuccess) {
-      setTimeout(() => setIsSuccess(false), 4000);
-   }
+  const [result, setResult] = useState();
+  const [isSuccess, setIsSuccess] = useState(false);
+  const { palette } = useTheme();
+  const { error, success } = palette;
 
-   const { register, handleSubmit, watch, errors } = useForm();
-   const onSubmit = (data, e) => {
-      console.log(data)
-      fetch('https://jamirhossain-backend.herokuapp.com/send-email', {
-         method:'POST',
-         headers:{
-            'Content-Type':'application/json'
-         },
-         body:JSON.stringify({data})
-      })
-      .then(res => res.json())
-      .then(data => {
-         console.log(data)
-         setResult(data)
-         if (data) {
-            setIsSuccess(true)
-            e.target.reset()
-         }
-      })
-   };
+  if (isSuccess) {
+    setTimeout(() => setIsSuccess(false), 4000);
+  }
 
-   const firstWord = 'Get In'
-   const secondWord = 'Touch'
-   const buttonText = 'Contact'
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-   return (
-      <div className='container'>
-          <Title 
-            firstWord={firstWord}
-            secondWord={secondWord}
-            buttonText={buttonText}
-         ></Title>
-         <div className='row mt-3 pt-3 mb-5 pb-5'>
-            <div className='col-1 col-sm-1 col-md-3'></div>
-            <div className='card col-10 col-sm-10 col-md-6 CardBox cardBg cardStyle'>
-               <h3 className='m-auto pb-3 text-white'>Contact With Me</h3>
-               <form className='mt-3' onSubmit={handleSubmit(onSubmit)}>
-                  <div className='form-group'>
-                     <input 
-                        className='form-control' 
-                        placeholder='Your Name' 
-                        name="name" 
-                        ref={register({ required: true })}
-                     />
-                     {errors.name && <span className='text-danger'>Name is required</span>}
-                  </div>
+  const onSubmit = (data, e) => {
+    fetch("https://jamirhossain-backend.herokuapp.com/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ data }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setResult(data);
+        if (data) {
+          setIsSuccess(true);
+          e.target.reset();
+        }
+      });
+  };
 
-                  <div className='form-group'>
-                     <input 
-                        className='form-control' 
-                        placeholder='Your Email' 
-                        name="email" 
-                        ref={register({ required: true })} 
-                     />
-                     {errors.email && <span className='text-danger'>Email is required</span>}
-                  </div>
+  const firstWord = "Get In";
+  const secondWord = "Touch";
+  const buttonText = "Contact";
 
-                  <div className='form-group'>
-                     <input 
-                        className='form-control' 
-                        placeholder='Message Subject' 
-                        name="subject" 
-                        ref={register({ required: true })} 
-                     />
-                     {errors.subject && <span className='text-danger'>Subject is required</span>}
-                  </div>
+  return (
+    <Container>
+      <Breadcrumb
+        firstWord={firstWord}
+        secondWord={secondWord}
+        buttonText={buttonText}
+      />
 
-                  <div className='form-group'>
-                     <textarea 
-                        className='form-control' 
-                        placeholder='Your Message' 
-                        rows='4' 
-                        name="text" 
-                        ref={register({ required: true })} 
-                     />
-                     {errors.text && <span className='text-danger'>Message Body is required</span>}
-                  </div>
-                  
-                  <div className='text-center submitBtn'>
-                     {isSuccess &&
-                        <p className={result.error ? "successMsg text-danger" : "successMsg text-success"}> 
-                           {result.error ? result.error : result.success && result.success} 
-                        </p>
-                     }
-                     <Button 
-                        type="submit" 
-                        className="button px-5" 
-                        variant="contained" 
-                        color="primary" 
-                        endIcon={<Send/>}
-                     >Send
-                     </Button>
-                  </div>
-               </form>
-               <div className="text-center">
-                  <p className='text-white font-italic'>
-                     Sending to <span style={{color:'#fff454', cursor:'pointer'}}>jomirhossain008@gmail.com</span>
-                  </p>
-               </div>
-            </div>
-            <div className='col-1 col-sm-1 col-md-3'></div>
-         </div>
-      </div>
-   );
+      <Grid container spacing={3} sx={{ py: "3rem" }}>
+        <Grid item xs={12} md={3}></Grid>
+        <Grid item xs={12} md={6}>
+          <CustomCard sx={{ p: "24px" }}>
+            <H3 sx={{ mb: "24px", textAlign: "center" }}>Contact With Me</H3>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <InputFieldBox>
+                <StyledInput
+                  placeholder="Your Name"
+                  {...register("name", { required: true })}
+                />
+                {errors.name && <Span>Name is required</Span>}
+              </InputFieldBox>
+
+              <InputFieldBox>
+                <StyledInput
+                  placeholder="Your Email"
+                  {...register("email", { required: true })}
+                />
+                {errors.email && <Span>Email is required</Span>}
+              </InputFieldBox>
+
+              <InputFieldBox>
+                <StyledInput
+                  placeholder="Message Subject"
+                  {...register("subject", { required: true })}
+                />
+                {errors.subject && <Span>Subject is required</Span>}
+              </InputFieldBox>
+
+              <InputFieldBox>
+                <StyledTextArea
+                  rows="4"
+                  placeholder="Your Message"
+                  {...register("message", { required: true })}
+                />
+                {errors.text && <Span>Message Body is required</Span>}
+              </InputFieldBox>
+
+              <ButtonBox>
+                {isSuccess && (
+                  <Error
+                    sx={{ color: result.error ? error.main : success.main }}
+                  >
+                    {result.error
+                      ? result.error
+                      : result.success && result.success}
+                  </Error>
+                )}
+
+                <Button
+                  type="submit"
+                  color="info"
+                  variant="contained"
+                  endIcon={<SendIcon />}
+                  sx={{ px: "32px" }}
+                >
+                  Send
+                </Button>
+              </ButtonBox>
+            </form>
+            <CustomBox sx={{ textAlign: "center" }}>
+              <Paragraph fontStyle="italic">
+                Sending to{" "}
+                <Span sx={{ color: "#fff454", cursor: "pointer" }}>
+                  jomirhossain008@gmail.com
+                </Span>
+              </Paragraph>
+            </CustomBox>
+          </CustomCard>
+        </Grid>
+        <Grid item xs={12} md={3}></Grid>
+      </Grid>
+    </Container>
+  );
 };
 
 export default Contact;

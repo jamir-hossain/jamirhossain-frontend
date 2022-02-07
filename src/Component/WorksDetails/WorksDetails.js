@@ -1,95 +1,87 @@
-import React, { useEffect, useState } from 'react';
-import worksData from '../../File/worksData';
-import Title from '../Title/Title';
-import { useParams } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import './WorksDetails.css'
+import React from "react";
+import { Box } from "@mui/system";
+import Title from "../Title/Title";
+import CustomCard from "../CustomCard";
+import CustomImage from "../CustomImage";
+import LinkIcon from "../icons/LinkIcon";
+import { Paragraph } from "../Typography";
+import { useParams } from "react-router-dom";
+import GithubIcon from "../icons/GithubIcon";
+import { Divider, Grid } from "@mui/material";
+import worksData from "../../utils/worksData";
+import Breadcrumb from "../Breadcrumb/Breadcrumb";
+import { ItemsContainer, SkillsItem, StyledA } from "../Works/SingleWork";
 
 const WorksDetails = () => {
-   const param = useParams()
-   console.log(param)
-   const [someWorks, setSomeWorks] = useState(null)
-   useEffect(() => {
-      setSomeWorks(worksData)
-   }, [])
+  const param = useParams();
 
-   const project = someWorks && someWorks.find( data => data.id === parseFloat(param.id))
-   console.log(project)
+  const project =
+    worksData && worksData.find((data) => data.id === parseFloat(param.id));
 
-   const firstWord = 'Details'
-   const secondWord = 'Of Project'
-   const link = 'Details'
+  const firstWord = "Details";
+  const secondWord = "Of Project";
+  const link = "Details";
 
-   return (
-      <div className='container'>
-         <Title 
-            firstWord={firstWord}
-            secondWord={secondWord}
-            buttonText={link}
-         ></Title>
-         <div className='row mb-3'>
-            <div className='col-md-2'></div>
-            <div className="card cardStyle singleCart col-md-8 p-0 my-5" style={{backgroundColor: "#0a192f"}}>
-            <img className='card-img-top' src={project && project.image} alt=""/>
-               <div className="card-body">
-                  <h5 className="text-white projectTitle"> 
-                     {project && project.title} 
-                  </h5>
-                  <p className="text-white text-justify"> 
-                     {project && project.description}
-                  </p>
-                  <div className='text-white py-3'>
-                     {
-                        project && project.features.length !== 0 && <h5 className='features'>Web App Features</h5>
-                     }
-                     <ul className='text-white'>
-                        { 
-                           project && project.features.length !== 0 && project.features.map(data => {
-                              return <div>
-                                 <li> {data} </li>
-                              </div>
-                           })
-                        }
-                     </ul>
-                  </div>
-                  <div className='skills-items-container mx-0 px-0 py-0'>
-                     {
-                        project && project.tools.map(data => {
-                           return <div className='tools'>
-                              <span className="small"> {data} </span>
-                           </div>
-                        }) 
-                     }
-                  </div>
-               </div>
-               <div className="card-footer">
-                  <ul className="list-inline m-0 p-0">
-                     <li className="list-inline-item text-white mr-3 h5">
-                        <a 
-                           className="UrlIcon" 
-                           href={project && project.githubUrl} target="_blank"
-                        >
-                           <FontAwesomeIcon icon={faGithub}/>
-                        </a>
-                     </li>
-                     <li className="list-inline-item h5">
-                        <a 
-                           className="UrlIcon" 
-                           href={project && project.siteUrl} 
-                           target="_blank"
-                        >
-                           <FontAwesomeIcon icon={faExternalLinkAlt}/>
-                        </a>
-                     </li>
-                  </ul>
-               </div>
-            </div>
-           <div className='col-md-2'></div>
-         </div>
-      </div>
-   );
+  return (
+    <div className="container">
+      <Breadcrumb
+        firstWord={firstWord}
+        secondWord={secondWord}
+        buttonText={link}
+      />
+      <Grid container>
+        <Grid item xs={12} md={2} />
+        <Grid item xs={12} md={8}>
+          <CustomCard>
+            <CustomImage width="100%" src={project.image} alt="" />
+
+            <Box sx={{ p: "16px" }}>
+              <Title>{project.title}</Title>
+              <Paragraph sx={{ mt: "12px", textAlign: "justify" }}>
+                {project.description}
+              </Paragraph>
+
+              {project.features.length !== 0 && (
+                <Box sx={{ my: 2 }}>
+                  <Title afterWidth="20%">App Features</Title>
+
+                  <Box mt="12px" component="ul">
+                    {project.features.map((data) => {
+                      return (
+                        <div>
+                          <li> {data} </li>
+                        </div>
+                      );
+                    })}
+                  </Box>
+                </Box>
+              )}
+              <ItemsContainer>
+                {project.tools.map((data) => {
+                  return (
+                    <SkillsItem>
+                      <span> {data} </span>
+                    </SkillsItem>
+                  );
+                })}
+              </ItemsContainer>
+            </Box>
+            <Divider />
+
+            <Box sx={{ p: "16px", "& a": { mx: "8px" } }}>
+              <StyledA href={project.githubUrl} target="_blank">
+                <GithubIcon />
+              </StyledA>
+              <StyledA href={project.siteUrl} target="_blank">
+                <LinkIcon />
+              </StyledA>
+            </Box>
+          </CustomCard>
+        </Grid>
+        <Grid item xs={12} md={2} />
+      </Grid>
+    </div>
+  );
 };
 
 export default WorksDetails;

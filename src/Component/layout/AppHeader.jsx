@@ -58,7 +58,7 @@ const NavItemBox = styled(FlexBox)(({ theme, mobileScreen }) => ({
   }),
 }));
 
-const Header = () => {
+const AppHeader = () => {
   const mobileScreen = useMediaQuery("(max-width:630px)");
 
   return (
@@ -73,9 +73,9 @@ const Header = () => {
 
           <NavItemBox mobileScreen={mobileScreen}>
             {navList.map((item) => {
-              const { Icon, title, url } = item;
+              const { Icon, title } = item;
               return (
-                <StyledLink className={title} to={url}>
+                <StyledLink className={title} to="/skills">
                   <Icon /> <br />
                   {title}
                 </StyledLink>
@@ -88,4 +88,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default AppHeader;

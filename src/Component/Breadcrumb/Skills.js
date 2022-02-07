@@ -1,9 +1,9 @@
 import React from "react";
 import SkillData from "./SkillData";
+import skillsData from "../../File/skillsData";
 import ProfileCard from "../About/ProfileCard";
 import { Container, Grid } from "@mui/material";
-import Breadcrumb from "../Breadcrumb/Breadcrumb";
-import skillsData from "../../utils/skillsData";
+import Breadcrumb from "./Breadcrumb";
 
 const Skills = () => {
   const firstWord = "All of";
@@ -17,6 +17,7 @@ const Skills = () => {
         secondWord={secondWord}
         buttonText={buttonText}
       />
+
       <Grid container spacing={3}>
         <Grid item xs={12} md={1} />
         <Grid item xs={12} md={4}>

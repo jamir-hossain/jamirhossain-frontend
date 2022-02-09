@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Header from "./Component/Header/Header";
 import About from "./Component/About/About";
 import Footer from "./Component/Footer/Footer";
@@ -13,8 +13,13 @@ import WorksDetails from "./Component/WorksDetails/WorksDetails";
 import { customTheme } from "./theme";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
+import { all_routes } from "./routes/routes";
+
+import { useLocation, useRoutes } from "react-router-dom";
 
 function App() {
+  const all_pages = useRoutes(all_routes);
+
   const theme = customTheme();
   // Scroll Top and Down
   const scrollToResultDiv = useRef();
@@ -29,8 +34,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      {all_pages}
       <div className="Background">
-        <Router>
+        {/* <Router>
           <Header></Header>
           <Switch>
             <Route exact path="/">
@@ -53,7 +59,7 @@ function App() {
             </Route>
           </Switch>
           <Footer></Footer>
-        </Router>
+        </Router> */}
       </div>
     </ThemeProvider>
   );

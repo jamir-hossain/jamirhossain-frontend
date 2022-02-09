@@ -1,5 +1,6 @@
 import { styled } from "@mui/system";
 import React from "react";
+import { Outlet } from "react-router-dom";
 import { navBarWidth } from "../../utils/constant";
 import AppHeader from "./AppHeader";
 
@@ -13,7 +14,10 @@ const AppLayout = ({ children }) => {
   return (
     <>
       <AppHeader />
-      <ContextBox>{children}</ContextBox>
+      <ContextBox>
+        <Outlet />
+        {/* {children} */}
+      </ContextBox>
     </>
   );
 };

@@ -28,7 +28,7 @@ const navList = [
   {
     Icon: DocsIcon,
     title: "Resume",
-    url: "/resume",
+    url: "https://github.com/Jamir45/jamirhossain-frontend/raw/608668ea78d98674513fa59fcfe45d854b21624c/CV%20of%20Jamir%20Hossain.pdf",
   },
 ];
 

@@ -21,19 +21,44 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   minHeight: navBarWidth,
 }));
 
-const StyledLink = styled(Link)(({ theme }) => ({
-  textAlign: "center",
-  transition: "all 0.3s",
-  padding: "2px 20px",
-  fontSize: "15px",
-  [theme.breakpoints.down("sm")]: {
+const commonLinkStyle = (theme) => {
+  return {
+    textAlign: "center",
+    transition: "all 0.3s",
+    padding: "2px 20px",
+    fontSize: "15px",
+    [theme.breakpoints.down("sm")]: {
+      padding: "2px 10px",
+      fontSize: "14px",
+    },
+    "&:hover": {
+      color: theme.palette.secondary.main,
+      transform: "scale(0.95)",
+    },
+  };
+};
+
+const InternalLink = styled(Link)(({ theme }) => ({
+  ...commonLinkStyle(theme),
+  "&.Resume": {
     padding: "2px 10px",
-    fontSize: "14px",
+    margin: "0px 10px",
+    borderRadius: "8px",
+    transform: "scale(0.9)",
+    border: `1px solid ${theme.palette.secondary.main}`,
+    [theme.breakpoints.down("sm")]: {
+      margin: "0px 0px",
+    },
+    "&:hover": {
+      color: "white !important",
+      backgroundColor: "#3f51b5 !important",
+      borderColor: "#3f51b5 !important",
+    },
   },
-  "&:hover": {
-    color: theme.palette.secondary.main,
-    transform: "scale(0.95)",
-  },
+}));
+
+const ExternalLink = styled("a")(({ theme }) => ({
+  ...commonLinkStyle(theme),
   "&.Resume": {
     padding: "2px 10px",
     margin: "0px 10px",
@@ -73,13 +98,22 @@ const AppHeader = () => {
 
           <NavItemBox mobileScreen={mobileScreen}>
             {navList.map((item) => {
-              const { Icon, title } = item;
-              return (
-                <StyledLink className={title} to="/skills">
-                  <Icon /> <br />
-                  {title}
-                </StyledLink>
-              );
+              const { Icon, title, url } = item;
+              if (title === "Resume") {
+                return (
+                  <ExternalLink className={title} href={url}>
+                    <Icon /> <br />
+                    {title}
+                  </ExternalLink>
+                );
+              } else {
+                return (
+                  <InternalLink className={title} to={url}>
+                    <Icon /> <br />
+                    {title}
+                  </InternalLink>
+                );
+              }
             })}
           </NavItemBox>
         </StyledContainer>

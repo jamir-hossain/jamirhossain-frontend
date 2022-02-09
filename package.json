@@ -19,6 +19,7 @@
     "react-scripts": "4.0.0",
     "react-swipeable-views": "^0.13.9",
     "react-typed": "^1.2.0",
+    "simplebar-react": "^2.3.6",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

@@ -1,11 +1,11 @@
-import CustomBox from "../../Component/CustomBox";
-import CustomCard from "../../Component/CustomCard";
 import React, { useState } from "react";
-import SendIcon from "../../Component/icons/SendIcon";
 import { useForm } from "react-hook-form";
 import { styled, useTheme } from "@mui/system";
-import { H3, Paragraph, Span } from "../../Component/Typography";
+import CustomBox from "../../Component/CustomBox";
+import CustomCard from "../../Component/CustomCard";
+import SendIcon from "../../Component/icons/SendIcon";
 import { Button, Container, Grid } from "@mui/material";
+import { H3, Paragraph, Span } from "../../Component/Typography";
 import Breadcrumb from "../../Component/Breadcrumb/Breadcrumb";
 
 const InputFieldBox = styled("div")(({ theme }) => ({
@@ -93,17 +93,9 @@ const Contact = () => {
       });
   };
 
-  const firstWord = "Get In";
-  const secondWord = "Touch";
-  const buttonText = "Contact";
-
   return (
     <Container>
-      <Breadcrumb
-        firstWord={firstWord}
-        secondWord={secondWord}
-        buttonText={buttonText}
-      />
+      <Breadcrumb firstWord="Get In" secondWord="Touch" buttonText="Contact" />
 
       <Grid container spacing={3} sx={{ py: "3rem" }}>
         <Grid item xs={12} md={3}></Grid>

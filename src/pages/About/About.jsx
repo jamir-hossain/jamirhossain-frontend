@@ -1,17 +1,18 @@
 import React from "react";
-import { Button, Container, Grid } from "@mui/material";
-import { Link } from "react-router-dom";
-import Particles from "react-particles-js";
-import { H2, Paragraph, Span } from "../../Component/Typography";
 import { useTheme } from "@mui/system";
+import { Link, useNavigate } from "react-router-dom";
+import Particles from "react-particles-js";
 import FlexBox from "../../Component/FlexBox";
+import { Button, Container, Grid } from "@mui/material";
 import OutlinedButton from "../../Component/OutlinedButton";
+import { H2, Paragraph, Span } from "../../Component/Typography";
 import CustomBox from "../../Component/CustomBox";
 import ProfileCard from "./ProfileCard";
 
 const About = () => {
-  const { palette } = useTheme();
-  const { secondary, primary } = palette;
+  const navigate = useNavigate();
+  const { palette, breakpoints } = useTheme();
+  const { secondary } = palette;
 
   return (
     <>
@@ -35,18 +36,38 @@ const About = () => {
         }}
       />
 
-      <Container sx={{ position: "relative", minHeight: "100vh" }}>
-        <Grid mt={5} container spacing={3}>
+      <Container
+        sx={{ position: "relative", minHeight: "calc(100vh - 100px)" }}
+      >
+        <Grid
+          mt={2}
+          container
+          spacing={3}
+          sx={{ [breakpoints.down("sm")]: { mt: 0 } }}
+        >
           <Grid container item xs={12} md={5}>
             <Grid item xs={1} md={1} lg={2}></Grid>
-            <Grid item xs={10} md={10} lg={9} sx={{ p: 0 }}>
+            <Grid
+              item
+              xs={12}
+              sm={10}
+              md={10}
+              lg={9}
+              sx={{ p: 0, [breakpoints.down("sm")]: { px: "24px" } }}
+            >
               <ProfileCard />
             </Grid>
           </Grid>
 
           <Grid container item xs={12} md={7}>
             <Grid item xs={12} lg={10}>
-              <CustomBox sx={{ mt: "4rem", p: "2rem" }}>
+              <CustomBox
+                sx={{
+                  mt: "4rem",
+                  p: "2rem",
+                  [breakpoints.down("sm")]: { px: "24px" },
+                }}
+              >
                 <Paragraph sx={{ color: secondary.main }}>Hello, I'm</Paragraph>
                 <H2>
                   Jamir <Span sx={{ color: secondary.main }}>Hossain</Span>
@@ -63,19 +84,25 @@ const About = () => {
                 <FlexBox
                   sx={{
                     flexWrap: "wrap",
-                    "& a": { my: "12px", mr: "24px" },
+                    alignItems: "center",
+                    "& button": { my: "12px", mr: "16px" },
                   }}
                 >
-                  <Link to="/contact">
-                    <Button variant="contained" color="info">
-                      CONTACT
-                    </Button>
-                  </Link>
-                  <Link to="/achievement">
-                    <Button variant="contained" color="info">
-                      ACHIEVEMENT
-                    </Button>
-                  </Link>
+                  <Button
+                    color="info"
+                    variant="contained"
+                    onClick={() => navigate("/contact")}
+                  >
+                    CONTACT
+                  </Button>
+                  <Button
+                    color="info"
+                    variant="contained"
+                    onClick={() => navigate("/achievement")}
+                  >
+                    ACHIEVEMENT
+                  </Button>
+
                   <a href="https://github.com/Jamir45/jamirhossain-frontend/raw/608668ea78d98674513fa59fcfe45d854b21624c/CV%20of%20Jamir%20Hossain.pdf">
                     <OutlinedButton color="secondary">RESUME</OutlinedButton>
                   </a>

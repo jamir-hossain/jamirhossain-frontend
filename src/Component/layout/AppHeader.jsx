@@ -5,11 +5,11 @@ import CustomBox from "../CustomBox";
 import CustomLink from "../CustomLink";
 import { Link } from "react-router-dom";
 import navList from "../../utils/navList";
-import { navBarWidth } from "../../utils/constant";
+import { appHeaderHeight } from "../../utils/constant";
 import { AppBar, Container, useMediaQuery } from "@mui/material";
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
-  minHeight: navBarWidth,
+  height: appHeaderHeight,
   background: theme.palette.primary.dark,
   boxShadow: theme.shadows[1],
 }));
@@ -18,7 +18,7 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  minHeight: navBarWidth,
+  height: appHeaderHeight,
 }));
 
 const commonLinkStyle = (theme) => {
@@ -87,7 +87,7 @@ const AppHeader = () => {
   const mobileScreen = useMediaQuery("(max-width:630px)");
 
   return (
-    <CustomBox sx={{ mb: `${navBarWidth}px` }}>
+    <CustomBox sx={{ marginBottom: `${appHeaderHeight}px` }}>
       <StyledAppBar position="fixed">
         <StyledContainer>
           {!mobileScreen && (

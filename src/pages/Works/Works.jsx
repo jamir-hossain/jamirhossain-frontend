@@ -1,9 +1,9 @@
-import CustomBox from "../../Component/CustomBox";
 import SingleWork from "./SingleWork";
 import React, { useState } from "react";
+import CustomBox from "../../Component/CustomBox";
+import { Container, Fab, Grid } from "@mui/material";
 import UpArrowIcon from "../../Component/icons/UpArrowIcon";
 import OutlinedButton from "../../Component/OutlinedButton";
-import { Container, Fab, Grid } from "@mui/material";
 import Breadcrumb from "../../Component/Breadcrumb/Breadcrumb";
 import worksData from "../../utils/worksData";
 
@@ -21,19 +21,15 @@ const Works = React.forwardRef((props, ref) => {
     ? worksData && worksData.slice(0, 6)
     : worksData && worksData;
 
-  const firstWord = "Some of";
-  const secondWord = "My Works";
-  const buttonText = "My Works";
-
   return (
     <Container ref={ref}>
       <Breadcrumb
-        firstWord={firstWord}
-        secondWord={secondWord}
-        buttonText={buttonText}
+        firstWord="Some of"
+        secondWord="My Works"
+        buttonText="My Works"
       />
 
-      <Grid container spacing={3}>
+      <Grid mt={4} container spacing={3}>
         {first6 &&
           first6.map((work) => (
             <Grid item xs={12} md={6} lg={4}>

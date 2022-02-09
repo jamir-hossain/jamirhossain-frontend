@@ -1,22 +1,34 @@
-import { styled } from "@mui/system";
 import React from "react";
+import { styled } from "@mui/system";
 import { Outlet } from "react-router-dom";
-import { navBarWidth } from "../../utils/constant";
+import { appFooterHeight, appHeaderHeight } from "../../utils/constant";
+import CustomScrollbar from "../CustomScrollbar";
 import AppHeader from "./AppHeader";
+import AppFooter from "./AppFooter";
+import { Box } from "@mui/material";
 
 const ContextBox = styled("div")(({ theme }) => ({
   width: "100%",
-  minHeight: `calc(100vh - ${navBarWidth}px)`,
   background: theme.palette.primary.main,
+  minHeight: `calc(100vh - 60px)`,
 }));
 
-const AppLayout = ({ children }) => {
+const AppLayout = () => {
+  const totalHeight = appHeaderHeight + appFooterHeight;
   return (
     <>
       <AppHeader />
       <ContextBox>
-        <Outlet />
-        {/* {children} */}
+        <CustomScrollbar
+          sx={{
+            height: `calc(100vh - ${totalHeight}px)`,
+          }}
+        >
+          <Box py="3rem">
+            <Outlet />
+          </Box>
+        </CustomScrollbar>
+        <AppFooter />
       </ContextBox>
     </>
   );

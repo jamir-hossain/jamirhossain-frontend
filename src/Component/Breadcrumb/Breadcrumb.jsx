@@ -24,7 +24,7 @@ const Breadcrumb = (props) => {
   const { firstWord, secondWord, buttonText } = props;
 
   return (
-    <Grid container sx={{ py: "2rem" }}>
+    <Grid container>
       <Grid item xs={12} lg={7} container>
         <Grid item xs={12} lg={5}>
           <H3 className="text-white">

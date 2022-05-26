@@ -30,7 +30,7 @@ const myProject = [
       "Opacity Studio is a landing page website. It's developed for a wonderful portfolio.",
     features: null,
     technologies: ["React", "NextJS", "Material-UI", "TypeScript"],
-    live_link: "https://trackem.vercel.app/",
+    live_link: "https://opacity-studio.vercel.app/",
   },
   {
     id: 4,
